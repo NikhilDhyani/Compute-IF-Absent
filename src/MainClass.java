@@ -12,46 +12,60 @@ public class MainClass {
     public static void main(String[] args)
     {
 
+        ArrayList<String>  llist=new ArrayList<String>(); //Creating arraylist
+
 
         Map<String,List<String>> AnimalBreed = new HashMap<>();
 
-        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("Bulldog");
+        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("bulldog");
+
+        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("atlassian");
+
+        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("pitbull");
+
+        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("dalmatian");
+
+        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("german shepherd");
+
+        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("japanese Chin");
+
+        AnimalBreed.computeIfAbsent("Cat",key -> new ArrayList<>()).add("bengal Cats");
 
         System.out.println("AnimalBreed: " + AnimalBreed);
 
+        System.out.println("Dogs Breed: " + AnimalBreed.get("Dog"));
 
-        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("Dalmatian");
-
-        System.out.println("AnimalBreed: " + AnimalBreed);
-
-
-        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("Japanese Chin");
-
-        System.out.println("AnimalBreed: " + AnimalBreed);
-
-        AnimalBreed.computeIfAbsent("Dog",key -> new ArrayList<>()).add("Japanese Chin");
-
-        System.out.println("AnimalBreed: " + AnimalBreed);
-
-
-
-
-
-        AnimalBreed.computeIfAbsent("Cat",key -> new ArrayList<>()).add("Bengal Cats");
-
-
-        System.out.println("AnimalBreed: " + AnimalBreed);
-
-        System.out.println("Dog Breed: " + AnimalBreed.get("Dog"));
-
-
-        // Checking Value Existence
+        System.out.println("Cats Breed "+AnimalBreed.get("Cat"));
 
         for (List<String> value : AnimalBreed.values()) {
+
+            /* Checking Value Existence
+
             if (value.contains("Bulldog")) { // change the 1 to whatever value you're searching
-                System.out.println("Found!");
+
+            */
+
+
+            for(String el : value)
+            {
+                // Converting value to uppercase so it can be sorted
+
+                llist.add(el.toUpperCase());
+
             }
+
         }
+
+        System.out.println("Not Sorted One "+llist);
+
+
+        Collections.sort(llist);
+
+        System.out.println("Sorted One "+llist);
+
+
+
+    }
 
 
 
@@ -64,4 +78,4 @@ public class MainClass {
 
 
     }
-}
+
